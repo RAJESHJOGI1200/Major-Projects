@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>Mobile Addiction Detector</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Stylesheet-->
+    <style>
+      body {
+        background-image: url('/static/img/a.jpg');
+        background-size: cover; /* Adjust the image size to cover the whole body */
+        /* Optionally, you can add more properties like background-repeat, background-position, etc. */
+      }
+    </style>
+    
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a style="margin-left: 20px;" class="navbar-brand" href="#">Mobile Addiction Detector</a>
+
+        <div style="margin-left: 800px;" class="collapse navbar-collapse" id="navbar-text">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link active" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'register' %}">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <section id="hero">
+        <div class="hero-container">
+          <div class="bg-text">
+            <h1 style="color: white; text-align: center; font-family: 'Arial', sans-serif; padding: 10px; border-radius: 5px; margin-top: 200px;">Smartphone Addiction</h1>
+            <h2 style="color: white; text-align: center; font-family: 'Arial', sans-serif; padding: 10px; border-radius: 5px;">Machine Learning Model for Prediction of Smartphone Addiction</h2>
+          </div>
+        </div>
+      </section>
+      
+      {% if message %}
+        <script>
+            alert("{{ message }}")        
+        </script>
+      {% endif %}
+</body>
+</html>
+
+
+

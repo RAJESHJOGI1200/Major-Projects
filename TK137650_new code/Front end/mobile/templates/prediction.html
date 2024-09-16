@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>Mobile Addiction Detector</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Stylesheet-->
+    <style>
+      body {
+        background-image: url('/static/img/a.jpg');
+        background-size: cover; /* Adjust the image size to cover the whole body */
+        /* Optionally, you can add more properties like background-repeat, background-position, etc. */
+      }
+    </style>
+    
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a style="margin-left: 20px;" class="navbar-brand" href="#"><b>Mobile Addiction Detector</b></a>
+
+      <div style="margin-left: 450px;" class="collapse navbar-collapse" id="navbar-text">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'userhome' %}"><b>Home</b> <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item active">
+            <a style="margin-left: 10px;" class="nav-link" href="{% url 'about' %}"><b>About</b> <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a style="margin-left: 10px;" class="nav-link" href="{% url 'view' %}"><b>View</b></a>
+          </li>
+
+          <li class="nav-item">
+            <a style="margin-left: 10px;" class="nav-link" href="{% url 'module' %}"><b>Module Train</b></a>
+          </li>
+          <li class="nav-item">
+            <a style="margin-left: 10px;" class="nav-link active" href="{% url 'prediction' %}"><b>Prediction</b></a>
+          </li>
+          <li class="nav-item">
+              <a style="margin-left: 10px;" class="nav-link" href="{% url 'graph' %}"><b>Graph</b></a>
+          </li>
+          <li class="nav-item">
+            <a style="margin-left: 10px;" class="nav-link" href="{% url 'index' %}"><b>LogOut</b></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+      <section id="hero">
+        <div class="hero-container">
+          <div class="cg-text">
+            <form action="{% url 'prediction' %}" method="post">
+                {% csrf_token %}   <br>
+        
+                <center><h1 style="color: white;">Prediction: {{msg}}</h1></center>
+
+                  <center>
+                    <select style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required name="f2">
+                      <option  value="" selected disabled><h2>Gender</h2></option>
+                      <option value="0"><h2>Male</h2></option>
+                      <option value="1"><h2>Female</h2></option>
+                      <option value="2"><h2>Others</h2></option>
+                    </select>
+                  </center>
+
+                  <center>
+                    <select style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required name = 'f3'>
+                      <option  value="" selected disabled><h2>Do you use your phone to click pictures of class notes?</h2></option>
+                      <option value="0"><h2>No</h2></option>
+                      <option value="1"><h2>Yes</h2></option>
+                    </select>
+                  </center>
+  
+                  <center>
+                    <select style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required name = 'f4'>
+                      <option  value="" selected disabled><h2>Do you buy books/access books from your mobile?</h2></option>
+                      <option value="0"><h2>No</h2></option>
+                      <option value="1"><h2>Yes</h2></option>
+                    </select>
+                  </center>
+  
+                  <center>
+                    <select style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required name = 'f5'> 
+                      <option  value="" selected disabled><h2>Does your phone's battery last a day?</h2></option>
+                      <option value="0"><h2>No</h2></option>
+                      <option value="1"><h2>Yes</h2></option>
+                    </select>
+                  </center>
+          
+                  <center>
+                    <select style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required name = 'f6'>
+                      <option  value="" selected disabled><h2>When your phone's battery dies out, do you run for the charger?</h2></option>
+                      <option value="0"><h2>No</h2></option>
+                      <option value="1"><h2>Yes</h2></option>
+                    </select>
+                  </center>
+        
+                  <center>
+                    <select style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required name = 'f7'>
+                      <option  value="" selected disabled><h2>Do you worry about losing your cell phone?</h2></option>
+                      <option value="0"><h2>No</h2></option>
+                      <option value="1"><h2>Yes</h2></option>
+                    </select>
+                  </center>
+        
+                  <center>
+                    <select style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required name = 'f8'>
+                      <option  value="" selected disabled><h2>Do you take your phone to the bathroom?</h2></option>
+                      <option value="0"><h2>No</h2></option>
+                      <option value="1"><h2>Yes</h2></option>
+                    </select>
+                  </center>
+      
+                  <center>
+                    <select style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required name = 'f9'>   
+                      <option  value="" selected disabled><h2>Do you use your phone in any social gathering (parties)?</h2></option>
+                      <option value="0"><h2>No</h2></option>
+                      <option value="1"><h2>Yes</h2></option>
+                    </select>
+                  </center>            
+                  
+                  <center>
+                    <select style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required name = 'f10'> 
+                      <option  value="" selected disabled><h2>Do you often check your phone without any notification?</h2></option>
+                      <option value="0"><h2>No</h2></option>
+                      <option value="1"><h2>Yes</h2></option>   
+                    </select>
+                  </center>           
+                  
+                  <center>
+                    <select style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required name = 'f11'>   
+                      <option  value="" selected disabled><h2>Do you check your phone just before going to sleep/just after waking up?</h2></option>
+                      <option value="0"><h2>No</h2></option>
+                      <option value="1"><h2>Yes</h2></option>  
+                    </select>
+                  </center>          
+                  
+                  <center>
+                    <select style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required name = 'f12'>  
+                      <option  value="" selected disabled><h2> Do you keep your phone right next to you while sleeping?</h2></option>
+                      <option value="0"><h2>No</h2></option>
+                      <option value="1"><h2>Yes</h2></option>  
+                    </select>
+                  </center>           
+                  
+                  <center>
+                    <select style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required name = 'f13'>  
+                      <option  value="" selected disabled><h2> Do you check emails, missed calls, texts during class time?</h2></option>
+                      <option value="0"><h2>No</h2></option>
+                      <option value="1"><h2>Yes</h2></option>  
+                    </select>
+                    <!-- <input type="number" style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required placeholder="Do you check emails, missed calls, texts during class time?" name = 'f13'>        -->
+                  </center>
+
+                  <center>
+                    <select style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required name = 'f14'><br>
+                      <option  value="" selected disabled><h2>Do you find yourself relying on your phone when things get awkward?</h2></option>
+                      <option value="0"><h2>No</h2></option>
+                      <option value="1"><h2>Yes</h2></option>
+                    </select>
+                  </center>
+      
+                  <center>
+                    <select style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required name = 'f15'>       
+                      <option  value="" selected disabled><h2>Are you on your phone while watching TV or eating food?</h2></option>
+                      <option value="0"><h2>No</h2></option>
+                      <option value="1"><h2>Yes</h2></option>    
+                    </select>
+                  </center>    
+                  
+                  <center>
+                    <select style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required name = 'f16'>  
+                      <option  value="" selected disabled><h2>Do you have a panic attack if you leave your phone elsewhere? </h2></option>
+                      <option value="0"><h2>No</h2></option>
+                      <option value="1"><h2>Yes</h2></option>       
+                    </select>
+                  </center>      
+                  
+                  <center>
+                    <select style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required name = 'f17'>   
+                      <option  value="" selected disabled><h2>You don't mind responding to messages or checking your phone while on date?</h2></option>
+                      <option value="0"><h2>No</h2></option>
+                      <option value="1"><h2>Yes</h2></option>     
+                    </select>
+                  </center>       
+                  
+                  <center>
+                    <select style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required name = 'f18'>        
+                      <option  value="" selected disabled><h2> do you always use your phone for playing games more than 2 hours?</h2></option>
+                      <option value="0"><h2>No</h2></option>
+                      <option value="1"><h2>Yes</h2></option>    
+                    </select>
+                  </center>   
+                  
+                  <center>
+                    <select style="width: 700px; border-radius: 5px; margin-top: 30px; height: 40px; color: black;" required name = 'f19'><br>
+                      <option  value="" selected disabled><h2>Can you live a day without phone ? </h2></option>
+                      <option value="0"><h2>No</h2></option>
+                      <option value="1"><h2>Yes</h2></option>
+                    </select>
+                  </center><br><br>
+
+                  <center>
+                    <button style="margin-top: 0px; width: 300px;" type="submit" class="btn btn-primary" style="width: 400px; border-radius: 20%; height:50px;">Submit</button>
+                  </center>
+            </form>
+          </div>
+        </div>
+      </section>
+      
+      {% if message %}
+        <script>
+            alert("{{ message }}")        
+        </script>
+      {% endif %}
+</body>
+</html>
+
+
+
+
+
+

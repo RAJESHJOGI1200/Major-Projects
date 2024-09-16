@@ -1,0 +1,166 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+/* Fixed sidenav, full height */
+.sidenav {
+  background: url(/static/img/iphone2.jpg);
+  height: 1060px;
+  width: 550px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0; 
+  overflow-x: hidden;
+  padding-top: 100px;
+  border-radius: 30px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 16px 10px 16px 16px;
+  text-decoration: none;
+  font-size: 50px;
+  color: black;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+  margin-left: 500px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+   height: 100%;
+   width: 100p;
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 10px;
+}
+
+/* Optional: Style the caret down icon */
+
+
+/* Some media queries for responsiveness */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/1.jpg") top center;
+  
+  background-size: cover;
+  position: relative;
+}
+
+#hero:before {
+  content: "";
+  background: rgba(5, 44, 63, 0.5);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero .hero-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 15px;
+}
+
+#hero h1 {
+  margin: 0 0 15px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  text-transform: uppercase;
+  color: gold;
+}
+
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.1); /* Black w/opacity/see-through */
+  color:  gold;
+  font-weight: bold;
+  
+  position: absolute;
+  top: 70%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 1500px;
+  padding: 30px;
+  text-align: center;
+}
+
+.ag-text{
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.5); /* Black w/opacity/see-through */
+  color:  blanchedalmond;
+  font-weight: bold;
+  border: 3px solid greenyellow;
+  position: absolute;
+  top: 20%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 1000px;
+  padding: 20px;
+  text-align: center;
+}
+.cg-text{
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.5); /* Black w/opacity/see-through */
+  color:  blanchedalmond;
+  font-weight: bold;
+  border: 3px solid greenyellow;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 2000px;
+  padding: 20px;
+  text-align: center;
+}
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>Mobile Addiction Detector</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Stylesheet-->
+    <style>
+      body {
+        background-image: url('/static/img/a.jpg');
+        background-size: cover; /* Adjust the image size to cover the whole body */
+        /* Optionally, you can add more properties like background-repeat, background-position, etc. */
+      }
+    </style>
+    
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a style="margin-left: 20px;" class="navbar-brand" href="#"><b>Mobile Addiction Detector</b></a>
+
+      <div style="margin-left: 450px;" class="collapse navbar-collapse" id="navbar-text">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'userhome' %}"><b>Home</b> <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item active">
+            <a style="margin-left: 10px;" class="nav-link" href="{% url 'about' %}"><b>About</b> <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item">
+            <a style="margin-left: 10px;" class="nav-link" href="{% url 'view' %}"><b>View</b></a>
+          </li>
+
+          <li class="nav-item">
+            <a style="margin-left: 10px;" class="nav-link active" href="{% url 'module' %}"><b>Module Train</b></a>
+          </li>
+          <li class="nav-item">
+            <a style="margin-left: 10px;" class="nav-link" href="{% url 'prediction' %}"><b>Prediction</b></a>
+          </li>
+          <li class="nav-item">
+              <a style="margin-left: 10px;" class="nav-link" href="{% url 'graph' %}"><b>Graph</b></a>
+          </li>
+          <li class="nav-item">
+            <a style="margin-left: 10px;" class="nav-link" href="{% url 'index' %}"><b>LogOut</b></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+      <section id="hero">
+        <div class="hero-container">
+          <form action="" enctype="multipart/form-data" method="post">
+                <center><b><h1 style="color:white;; margin-top: 50px;">{{msg}}</h1></b></center>
+                {% csrf_token %}
+              <center><label style="margin-top: 50px;" for="algo"><h1 style="color:white;">Algorithms:</h1></label>
+                    <br>
+            
+                    <select style="margin-top: 50px; width: 300px; height: 50px;" name="algo" id="algo"  style="width: 700px; height: 70px;">
+                      <option value="" ><h2>Choose Module</h2></option>
+                      <option value="2"><h2>Decision Tree classifier</h2></option>
+                      <option value="1"><h2>Random Forest classifier</h2></option>
+                      <option value="3"><h2>Logistic Regression</h2></option>                                   
+            
+                    </select>
+                    <br><br>
+                    <button type="submit" class="btn btn-primary" style="width: 200px; height:50px; background-color:red;">Submit</button>
+                    </center>
+                       
+                    </div>
+                
+               </div>
+              </form>
+        </div>
+      </section>
+      
+      {% if message %}
+        <script>
+            alert("{{ message }}")        
+        </script>
+      {% endif %}
+</body>
+</html>
+
+
+
+
+
+
